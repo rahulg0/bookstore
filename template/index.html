@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <link rel="stylesheet" href="../Static/CSS/index.css">
+    <style>
+        /* Add the :hover pseudo-class to the h1 selector */
+        h2:hover{
+            background-color: yellow;
+            cursor: pointer;
+        }
+        h4:hover{
+            background-color: grey;
+            cursor: pointer;
+        }
+        a:hover{
+            background-color: grey;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    </ul>
+    
+    <header>
+      
+        <div class="header-content">
+            <a href="index.html"><img src="../logo1.png" alt="Logo" class="logo"></a>
+            <h1 >BOOKS SCROLL</h1>
+        </div>
+    </header>
+    <nav>
+        <ul class="header-right">
+            
+                
+            <nav>
+              <ul class="header-right">
+                  <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                  <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                  <li><a href="#"><i class="fas fa-book"></i> Books</a></li>
+                  <li><a href="#"><i class="fas fa-address-book"></i> Contact</a></li>
+                  <li><a href="LoginInterface.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                  <li class="dropdown">
+                    <div class="dropbtn"><i class="fas fa fa-bookmark"></i> Genre</div>
+                    <div class="dropdown-content" id="genreDropdown">
+                        <div class="genre-container" data-genre="fiction">
+                            <h3>Fiction</h3>
+                            <div class="books">
+                                <a href="book.html?name=John&image=image.jpg&content=Lorem ipsum">Book 1</a>
+                                <a href="book.html?name=John&image=image.jpg&content=Lorem ipsum">Book 2</a>
+                                <a href="book.html?name=John&image=image.jpg&content=Lorem ipsum">Book 3</a>
+                            </div>
+                        </div>
+                        <div class="genre-container" data-genre="nonfiction">
+                            <h3>Non-Fiction</h3>
+                            <div class="books">
+                                <a href="book.html?name=John&image=image.jpg&content=Lorem ipsum">Book A</a>
+                                <a href="book.html?name=John&image=image.jpg&content=Lorem ipsum">Book B</a>
+                                <a href="book.html?name=John&image=image.jpg&content=Lorem ipsum">Book C</a>
+                            </div>
+                        </div>
+                        <!-- Add more genre containers as needed -->
+                    </div>
+                </li>       
+              </ul>
+          </nav>
+        </ul>
+    </div>
+    </nav>
+    
+   
+    <section>
+        <h2>Featured Books</h2>
+        <div class="featured-books-wraper"></div>
+
+    
+        <div>
+            <div class="book">
+                <img src="../template/includes/book1.png" alt="Book 1">
+                <h4>Psychology</h4>
+                <button Add to cart="btn btn--primary">Add to cart</button>
+                
+            </div>
+            <div class="book">
+                <img src="../template/includes/book2.png" alt="Book 2">
+                <h4>Psychology for beginners</h4>
+                <button Add to cart="btn btn--primary" onclick="addToCart('Psychology', 9.99); window.location.href='cart.html';">Add to cart</button>
+            </div>
+            <div class="book">
+                <img src="../template/includes/book3.png" alt="Book 3">
+                <h4>The Power of Habit</h4>
+                <button Add to cart="btn btn--primary">Add to cart</button>
+            </div>
+            <div class="book">
+                <img src="../template/includes/book4.webp" alt="Book 4">
+                <h4>Rich Dad Poor Dad</h4>
+                <button Add to cart="btn btn--primary">Add to cart</button>
+            </div>
+            <div class="book">
+                <img src="../template/includes/book5.jpg" alt="Book 5">
+                <h4>Ikigai</h4>
+                <button Add to cart="btn btn--primary">Add to cart</button>
+            </div>
+            <div class="book">
+              <img src="../template/includes/book4.webp" alt="Book 4">
+              <h4>Rich Dad Poor Dad</h4>
+              <button Add to cart="btn btn--primary">Add to cart</button>
+          </div>
+          <div class="book">
+            <img src="../template/includes/book4.webp" alt="Book 4">
+            <h4>Rich Dad Poor Dad</h4>
+            <button Add to cart="btn btn--primary">Add to cart</button>
+        </div>
+        <div class="book">
+          <img src="../template/includes/book4.webp" alt="Book 4">
+          <h4>Rich Dad Poor Dad</h4>
+          <button Add to cart="btn btn--primary">Add to cart</button>
+      </div>
+        </div>
+    </section>
+    <button id="back-to-top-btn" class="back-to-top-btn" onclick="topFunction()" title="Go to top">🡅</button>
+    <footer>
+        <p>&copy; 2024 Book Scroll. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        function preventCopy(e) {
+    e.preventDefault();
+    alert('Copying is not allowed on this website.');
+}
+
+// Function to prevent right-click
+function preventRightClick(e) {
+    e.preventDefault();
+    alert('Right-clicking is not allowed on this website.');
+}
+
+// Event listener for copy event
+document.addEventListener('copy', preventCopy);
+
+// Event listener for right-click event
+document.addEventListener('contextmenu', preventRightClick);
+
+        
+  function toggleHighlight() {
+    var text = document.getElementById('text-to-highlight');
+    text.classList.toggle('h2:hover');
+  }
+
+  // Get the button
+  var mybutton = document.getElementById("back-to-top-btn");
+
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  // Get all genre containers
+const genreContainers = document.querySelectorAll('.genre-container');
+
+// Loop through each genre container
+genreContainers.forEach(container => {
+    // Add mouseover event listener
+    container.addEventListener('mouseover', () => {
+        // Show the books associated with the hovered genre
+        container.querySelector('.books').style.display = 'block';
+    });
+
+    // Add mouseout event listener
+    container.addEventListener('mouseout', () => {
+        // Hide the books when mouse leaves the genre container
+        container.querySelector('.books').style.display = 'none';
+    });
+});
+// Get the dropdown button and content
+const dropdownBtn = document.querySelector('.dropbtn');
+const dropdownContent = document.querySelector('.dropdown-content');
+
+// Show dropdown content when the dropdown button is clicked
+dropdownBtn.addEventListener('click', function() {
+    dropdownContent.classList.toggle('show');
+});
+
+// Hide dropdown content when clicking outside the dropdown
+window.addEventListener('click', function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        dropdownContent.classList.remove('show');
+    }
+});
+
+
+
+
+        </script>
+</body>
+</html>
+

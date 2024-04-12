@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instagram-like Login Interface</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url('../static/includes/bg-img.png');
+        background-size: cover;
+    }
+
+    .container {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 90px;
+        width: 360px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        background-color: #3897f0;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 3px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #357ae8;
+    }
+
+    .forgot-password {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .forgot-password a {
+        color: #003569;
+        text-decoration: none;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Login</h2>
+    <form action="#">
+        <input type="text" placeholder="Username or Email">
+        <input type="password" placeholder="Password">
+        <input type="submit" value="Log In">
+    </form>
+    <div class="forgot-password">
+        <a href="#">Forgot Password?</a>
+    </div>
+</div>
+
+</body>
+<script>
+    const form = document.getElementById('loginForm');
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent the default form submission
+
+        const username = form.elements[0].value; // Get the value of the first input field
+        const password = form.elements[1].value; // Get the value of the second input field
+
+        // You can add your validation logic here
+        if (username === 'myusername' && password === 'mypassword') {
+            // Redirect to the home page
+            window.location.href = 'home.html'; // Replace 'home.html' with your desired home page URL
+        } else {
+            alert('Invalid username or password');
+        }
+    });
+</script>
+</html>
