@@ -13,10 +13,10 @@
   </header>
   
   <div class="product">
-    <img src="#" alt="Dummy Image">
+    <img id="image" src="" alt="Dummy Image">
     <div class="product-info">
-      <h2>Product Name</h2>
-      <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h2 id="name"></h2>
+      <p id="content"></p>
       <p>Price: $XX.XX</p>
       <button>Add to Cart</button>
     </div>
@@ -25,5 +25,31 @@
   <footer>
     <p>&copy; 2024 Your Website</p>
   </footer>
+
+  <script>
+    // Function to parse query parameters from URL
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    // Get the values of 'name', 'image', and 'content' parameters from the URL
+    var nameValue = getParameterByName('name');
+    var imageValue = getParameterByName('image');
+    var contentValue = getParameterByName('content');
+    var price = getParameterByName('price');
+
+    // console.log('Name:', nameValue);
+    // console.log('Image:', imageValue);
+    // console.log('Content:', contentValue);
+    document.getElementById('name').textContent = nameValue;
+    document.getElementById('image').src = imageValue;
+    document.getElementById('content').textContent = contentValue;
+</script>
 </body>
 </html>
