@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+        /* Add your custom styles for the checkout page here */
+        body {
+            background-color: #fff;
+            color: #000;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .checkout-container {
+            border: 2px solid #000;
+            margin: auto;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #000;
+        }
+
+        #cart-items {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        #total-price {
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html"><img src="../logo1.png" alt="Logo" class="logo"></a>
+            <h1>Checkout</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="checkout-container">
+            <h2>Your Cart</h2>
+            <div id="cart-items">
+                <!-- Cart items will be displayed here dynamically -->
+            </div>
+            <h3>Total: <span id="total-price">$0</span></h3>
+
+            <button id="checkout-btn" class="btn btn--primary">Proceed to Checkout</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Book Scroll. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Retrieve cart items from localStorage
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const cartItemsContainer = document.getElementById('cart-items');
+
+        // Display cart items on the page
+        cartItems.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+            cartItemsContainer.appendChild(itemElement);
+        });
+
+        // Calculate total price
+        const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
+        document.getElementById('total-price').textContent = `$${totalPrice.toFixed(2)}`;
+
+        // Handle checkout button click
+        document.getElementById('checkout-btn').addEventListener('click', function() {
+            alert('Redirecting to payment gateway...');
+            // You can add further processing for checkout here
+            // For example, clearing cart items from localStorage
+            localStorage.removeItem('cartItems');
+            // Redirect to thank you page or homepage
+            window.location.href = 'thank-you.html';
+        });
+    </script>
+</body>
+</html>
