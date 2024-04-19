@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="dropdown.css">
+    <link rel="stylesheet" href="index.css">
     <title>Checkout</title>
     <style>
         /* Add your custom styles for the checkout page here */
@@ -69,6 +72,44 @@
             <h1>Checkout</h1>
         </div>
     </header>
+    <nav>
+        <ul class="header-right">
+            
+                
+            <nav>
+              <ul class="header-right">
+                  <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                  <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                  <li><a href="#"><i class="fas fa-book"></i> Books</a></li>
+                  <li><a href="#"><i class="fas fa-address-book"></i> Contact</a></li>
+                  <li><a href="LoginInterface.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                  <li class="dropdown">
+                    <div class="dropbtn"><i class="fas fa fa-bookmark"></i> Genre <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                    <div class="dropdown-content" id="genreDropdown">
+                        <div class="genre-container" data-genre="fiction">
+                            <h3>Fiction</h3>
+                            <div class="books">
+                                <a href="book.html?name=Atomic Habits&image=image.jpg&content=Lorem ipsum">Atomic Habits</a>
+                                <a href="book.html?name=To kill a mocking bird=image.jpg&content=Lorem ipsum">To kill a mocking bird</a>
+                                <a href="book.html?name=The Great Gatsby"=image.jpg&content=Lorem ipsum">The Great Gatsby"</a>
+                            </div>
+                        </div>
+                        <div class="genre-container" data-genre="nonfiction">
+                            <h3>Non-Fiction</h3>
+                            <div class="books">
+                                <a href="book.html?name=Thinking, Fast and Slow=image.jpg&content=Lorem ipsum">Thinking, Fast and Slow</a>
+                                <a href="book.html?name=Educated: A Memoir=image.jpg&content=Lorem ipsum">Educated: A Memoir</a>
+                                <a href="book.html?name=Blink,The Power of Thinking Without Thinking=image.jpg&content=Lorem ipsum">Blink: The Power of Thinking Without Thinking</a>
+                            </div>
+                        </div>
+                        <!-- Add more genre containers as needed -->
+                    </div>
+                </li>       
+              </ul>
+          </nav>
+        </ul>
+    </div>
+    </nav>
 
     <main>
         <div class="checkout-container">
